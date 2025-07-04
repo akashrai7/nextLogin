@@ -54,7 +54,7 @@ runtimeConfig: {
     MONGODB_URI: process.env.MONGODB_URI,
   },
 
-
+  pages: true,
   components: true,
   compatibilityDate: "2025-01-31",
 });
