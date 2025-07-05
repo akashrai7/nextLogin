@@ -48,7 +48,7 @@
             <div class="form-group mb-4">
               <p>{{ error }}</p>
               <button type="submit" class="btn btn-primary fw-medium py-2 px-3 w-100">
-                <i class="material-symbols-outlined text-white fs-20 me-2">login</i>
+                <i class="material-symbols-outlined text-white fs-20 me-2"></i>
                 <span>Login</span>
               </button>
 
@@ -87,13 +87,15 @@ const handleLogin = async () => {
 
     localStorage.setItem('token', res.token);
     localStorage.setItem('role', res.role);
+    //  localStorage.setItem('token', result.token.access_token);
 
     if (res.role === 'superadmin') {
       router.push('/super-admin/dashboard');
     } else if (res.role === 'admin') {
       router.push('/admin/dashboard');
     } else {
-      router.push('/user/dashboard');
+      router.push('/dashboard');
+      // router.push('/user/dashboard');
     }
   } catch (err) {
     error.value = err?.data?.statusMessage || 'Invalid credentials';
