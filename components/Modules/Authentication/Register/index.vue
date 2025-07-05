@@ -101,15 +101,15 @@ const handleRegister = async () => {
   error.value = "";
   success.value = "";
 
-  // if (!name.value || !email.value || !dob.value || !password.value || !confirmPassword.value) {
-  //   error.value = "All fields are required.";
-  //   return;
-  // }
+  if (!name.value || !email.value || !dob.value || !password.value || !confirmPassword.value) {
+    error.value = "All fields are required.";
+    return;
+  }
 
-  // if (password.value !== confirmPassword.value) {
-  //   error.value = "Passwords do not match";
-  //   return;
-  // }
+  if (password.value !== confirmPassword.value) {
+    error.value = "Passwords do not match";
+    return;
+  }
 
   try {
     const res = await $fetch("/api/register", {
@@ -130,4 +130,4 @@ const handleRegister = async () => {
   }
 };
 
-</script>
+</script> 

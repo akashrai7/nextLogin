@@ -1,6 +1,6 @@
 import connectDB from "@/server/utils/db";
 import User from "@/server/models/User";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 
 export default defineEventHandler(async (event) => {
   await connectDB();
