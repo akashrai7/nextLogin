@@ -56,7 +56,7 @@
 
             <div class="form-group">
               <p>
-                Don’t have an account..
+                Don’t have an account? <a >Sign Up</a>
                
               </p>
             </div>
