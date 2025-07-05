@@ -8,6 +8,8 @@ const userSchema = new Schema({
   role: { type: String, enum: ["superadmin", "admin", "user"], default: "user" },
 });
 
-const User = mongoose.models.User || model("User", userSchema);
+
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+
 export default User;
 

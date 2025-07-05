@@ -23,14 +23,14 @@
             Sign In with social account or enter your details
           </p>
         
-          <form @submit.prevent="handleLogin"  >
+          <form  @submit.prevent="handleLogin">
             <div class="form-group mb-4">
               <label class="label text-secondary">Email Address</label>
               <input
                 v-model="email" 
                 type="email"
                 class="form-control h-55"
-                placeholder="akash@gmail.com"
+                placeholder=""
               />
             </div>
             <div class="form-group mb-4">
@@ -39,14 +39,14 @@
                 v-model="password" 
                 type="password"
                 class="form-control h-55"
-                placeholder="123456"
+                placeholder=""
               />
             </div>
             <div class="form-group mb-4">
              
             </div>
             <div class="form-group mb-4">
-              <p>{{ message }}</p>
+              <p>{{ error }}</p>
               <button type="submit" class="btn btn-primary fw-medium py-2 px-3 w-100">
                 <i class="material-symbols-outlined text-white fs-20 me-2">login</i>
                 <span>Login</span>
@@ -67,42 +67,36 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import { useApi } from '~/utils/api';
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-export default defineComponent({
+const email = ref('');
+const password = ref('');
+const error = ref('');
+const router = useRouter();
 
-  data() {
-    return {
-      email: '',
-      password: '',
-      message: ''
-    };
-  },
-  methods: {
-   async handleLogin() {
+const handleLogin = async () => {
+  error.value = '';
+
   try {
-    const result = await useApi('http://localhost:3001/auth/login', {
+    const res = await $fetch('/api/auth/login', {
       method: 'POST',
-      body: JSON.stringify({ email: this.email, password: this.password })
+      body: { email: email.value, password: password.value },
     });
 
-    console.log('Result:', result);
+    localStorage.setItem('token', res.token);
+    localStorage.setItem('role', res.role);
 
-    if (result.token) {
-      this.message = result.message;
-      localStorage.setItem('token', result.token.access_token);
-      this.$router.push('/dashboard');
+    if (res.role === 'superadmin') {
+      router.push('/super-admin/dashboard');
+    } else if (res.role === 'admin') {
+      router.push('/admin/dashboard');
     } else {
-      this.message = result.message || 'Login failed';
+      router.push('/user/dashboard');
     }
   } catch (err) {
-    console.error('Login error:', err);
-    this.message = 'Error occurred during login';
+    error.value = err?.data?.statusMessage || 'Invalid credentials';
   }
-}
-
-  }
-});
+};
 </script>

@@ -23,6 +23,7 @@
     "date-fns": "^2.30.0",
     "echarts": "^5.5.1",
     "feather-icons": "^4.29.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.1",
     "nuxt": "^3.13.0",
     "nuxt-feather-icons": "^1.2.4",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@bootstrap-vue-next/nuxt": "^0.24.23",
     "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.10",
     "bootstrap": "^5.3.5",
     "bootstrap-vue-next": "^0.24.23",
     "sass-loader": "^16.0.2"
