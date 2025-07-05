@@ -66,7 +66,7 @@
           </NuxtLink> -->
           <NuxtLink
             to="/authentication/register"
-            class="btn btn-primary-div py-2 px-4 fw-medium fs-16 text-white ms-3 rounded-3"
+            class="btn btn-primary-div py-2 px-4 fw-medium fs-16 rounded-3"
           >
             <i class="ri-user-line fs-18"></i>
             <span class="ms-1">Register</span>
