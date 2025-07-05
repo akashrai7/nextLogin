@@ -22,7 +22,7 @@
               alt="login"
             />
           </div>
-          <h3 class="fs-28 mb-2">Register to Trezo Dashboard</h3>
+          <h3 class="fs-28 mb-2">Register to Dashboard</h3>
           <p class="fw-medium fs-16 mb-4">
             Register with social account or enter your details
           </p>
@@ -43,7 +43,7 @@
                 v-model="email" 
                 type="email"
                 class="form-control"
-                placeholder="example@trezo.com"
+                placeholder="example@gmail.com"
               />
             </div>
             <div class="form-group mb-3">
