@@ -1,11 +1,10 @@
+import { defineEventHandler, readBody, createError } from 'h3';
 import connectDB from "@/server/utils/db";
 import User from "@/server/models/User";
 import bcrypt from 'bcryptjs';
 
 export default defineEventHandler(async (event) => {
-  await connectDB();
-
-  console.log("DB connected");
+  await connectDB();  // MongoDB connection ensure karo
 
   const body = await readBody(event);
   const { name, email, dob, password, confirmPassword } = body;

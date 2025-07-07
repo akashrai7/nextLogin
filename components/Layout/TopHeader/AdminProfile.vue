@@ -109,13 +109,8 @@
         </li>
 
         <li>
-          <NuxtLink
-            class="dropdown-item d-flex align-items-center text-body"
-            to="/authentication/login"
-          >
-            <i class="material-symbols-outlined">logout</i>
-            <span class="ms-2">Logout</span>
-          </NuxtLink>
+           <i class="material-symbols-outlined">logout</i>
+           <button @click="logout">Logout</button>
         </li>
       </ul>
     </div>
@@ -125,5 +120,12 @@
 <script>
 export default {
   name: "AdminProfile",
+};
+</script>
+
+<script setup>
+const logout = () => {
+  localStorage.removeItem('token'); // Token Remove
+  navigateTo('/authentication/login'); // Redirect
 };
 </script>
