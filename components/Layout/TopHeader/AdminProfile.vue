@@ -123,9 +123,3 @@ export default {
 };
 </script>
 
-<script setup>
-const logout = () => {
-  localStorage.removeItem('token'); // Token Remove
-  navigateTo('/authentication/login'); // Redirect
-};
-</script>
