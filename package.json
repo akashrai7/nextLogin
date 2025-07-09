@@ -40,6 +40,7 @@
     "@bootstrap-vue-next/nuxt": "^0.24.23",
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/prismjs": "^1.26.5",
     "bootstrap": "^5.3.5",
     "bootstrap-vue-next": "^0.24.23",
     "sass-loader": "^16.0.2"
