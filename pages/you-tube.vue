@@ -7,7 +7,7 @@
     <div class="col-lg-12">
       <div class="card bg-white border-0 rounded-3 mb-4">
         <div class="card-body p-4">
-          <h4 class="fs-18 mb-4">Google Map Basic</h4>
+          <h4 class="fs-18 mb-4">Build a full stack project with NextJS, NextAuth, Imagekit and Mongodb</h4>
          
           <div class="tab-content" id="myTabContent">
           <iframe 
