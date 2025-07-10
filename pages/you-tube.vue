@@ -13,7 +13,7 @@
           <iframe
   src="https://navtika6968.graphy.com/"
   width="100%"
-  height="400"
+  height="800"
   frameBorder="0"
   allowFullScreen
 ></iframe>
