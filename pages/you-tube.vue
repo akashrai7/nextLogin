@@ -11,7 +11,7 @@
          
           <div class="tab-content" id="myTabContent">
           <iframe
-  src="https://www.youtube.com/embed/videoseries?list=PL8dPuuaLjXtOfse2ncvffeelTrqvhrz8H"
+  src="https://navtika6968.graphy.com/"
   width="100%"
   height="400"
   frameBorder="0"
